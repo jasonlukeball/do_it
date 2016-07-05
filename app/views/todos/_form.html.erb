@@ -1,0 +1,8 @@
+<%= form_for [list, todo], url: list_todos_path([list, todo]) do |f| %>
+    <div class="input-group">
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Create a todo' %>
+      <span class="input-group-btn">
+        <%= f.submit "Create", class: 'btn btn-success' %>
+      </span>
+    </div>
+<% end %>

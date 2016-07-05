@@ -9,9 +9,14 @@
 
   <div id="<%= list.id %>" class="panel-collapse collapse">
     <div class="panel-body">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
+      <%= render 'todos/form', todo: Todo.new, list: list %>
+      <% if list.todos.any? %>
+          <%= render list.todos %>
+      <% else %>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      <% end %>
     </div>
   </div>
 </div>
