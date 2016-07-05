@@ -1,27 +1,10 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree ../
- *= require_self
- */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 
-
-/*
-* ===NAVBAR===
-*/
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
 
 .navbar {
   border: 0;
@@ -48,10 +31,13 @@ nav ul li a:hover, a:active{
 }
 
 
+/* ==========================================================================
+   GENERAL
+   ========================================================================== */
 
-/*
-* ===GENERAL===
-*/
+a {
+  text-decoration: none !important;
+}
 
 body {
   background-color: #75cb7e;
@@ -63,3 +49,41 @@ h1 {
   font-family: 'Open Sans', sans-serif;
 }
 
+
+/* ==========================================================================
+   CARDS
+   ========================================================================== */
+
+
+.card {
+  background-color: #fff;
+  border: 1px solid #c9d7df;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 transparent;
+  transition: box-shadow linear 0.04s, border-color linear 0.2s;
+  position: relative;
+}
+
+.list-card {
+  @extend .card;
+  display:        block;
+  padding: 20px 20px 20px 20px;
+}
+
+.card,
+.card.o__hoverable:hover:active {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 2px 20px 0 rgba(0, 0, 0, 0);
+  transition: all ease-in-out 0.2s;
+  transform: scale3d(1,1,1);
+}
+
+.card.o__hoverable:hover,
+.card.o__selected {
+  border-color: #acbfca;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0), 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+  transform: scale3d(1.015,1.015,1);
+  opacity: 1;
+}

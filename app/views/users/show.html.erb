@@ -1,2 +1,14 @@
 <h1><%= current_user.name %></h1>
 <%= current_user.inspect %>
+
+<br><br><br><br>
+
+<!-- CREATE LIST FORM -->
+<%= render 'lists/form', user: current_user, list: List.new %>
+
+
+<br><br><br><br>
+
+<div class="panel-group" id="accordion">
+  <%= render current_user.lists %>
+</div>
