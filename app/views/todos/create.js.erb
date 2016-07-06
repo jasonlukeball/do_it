@@ -1,0 +1,12 @@
+
+<% list_new_todo_div    = "#list-#{@todo.list.id}-new-todo" %>
+<% list_new_todo_input  = "#list-#{@todo.list.id}-new-todo-input" %>
+<% list_todos_div       = "#list-#{@todo.list.id}-todos" %>
+
+<% if @todo.valid? %>
+    $('<%= list_todos_div %>').prepend("<li><%= @todo.name %></li>");
+    $('<%= list_new_todo_input %>').removeClass('has-error');
+    $('<%= list_new_todo_div %>').html("<%= escape_javascript(render partial: 'todos/form', locals: { list: @todo.list, todo: Todo.new }) %>");
+<% else %>
+    $('<%= list_new_todo_input %>').addClass('has-error');
+<% end %>
