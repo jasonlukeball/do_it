@@ -5,7 +5,6 @@ class List < ActiveRecord::Base
 
   validates :name, presence: true
 
-
   default_scope { order('created_at DESC') }
 
 end
