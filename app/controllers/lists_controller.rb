@@ -7,7 +7,12 @@ class ListsController < ApplicationController
     else
       flash.now[:alert] = ">_<"
     end
-    redirect_to user_path(current_user)
+
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+
   end
 
 

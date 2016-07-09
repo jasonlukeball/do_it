@@ -5,4 +5,6 @@ class Todo < ActiveRecord::Base
   validates :user_id, presence: true
   validates :name, presence: true
 
+  default_scope { order('created_at DESC') }
+
 end
