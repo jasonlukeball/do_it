@@ -1,1 +1,4 @@
-<li><%= todo.name %></li>
+<li id="todo-<%= todo.id %>">
+  <%= todo.name %>
+  <%= link_to "", [todo.list, todo], method: :delete, class: 'glyphicon glyphicon-trash', remote: true %>
+</li>

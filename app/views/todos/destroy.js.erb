@@ -1,0 +1,11 @@
+console.log('JS was called');
+<% list_todo_id    = "#todo-#{@todo.id}" %>
+
+<% if @todo.destroyed? %>
+    console.log('todo deleted');
+    $('<%= list_todo_id %>').slideUp(150);
+    // $('.js-comments-count').html('pluralized_comment_count');
+<% else %>
+    console.log('error deleting todo');
+    $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
+<% end %>
