@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, only: [:show] do
-    resources :lists, only: [:create]
+    resources :lists, only: [:create, :destroy]
   end
 
   resources :lists, only: [] do

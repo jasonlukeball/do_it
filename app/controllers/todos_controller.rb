@@ -8,7 +8,7 @@ class TodosController < ApplicationController
 
     if @todo.save
     else
-      flash[:notice] = "Todo could not be saved!"
+      flash.now[:alert] = ">_<"
     end
 
     respond_to do |format|
@@ -23,7 +23,7 @@ class TodosController < ApplicationController
 
     if @todo.destroy
     else
-      flash[:notice] = "Todo could not be deleted, please try again!"
+      flash.now[:alert] = ">_<"
     end
 
     respond_to do |format|

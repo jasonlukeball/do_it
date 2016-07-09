@@ -5,10 +5,26 @@ class ListsController < ApplicationController
 
     if @list.save
     else
-      flash[:notice] = "Error"
+      flash.now[:alert] = ">_<"
     end
     redirect_to user_path(current_user)
   end
+
+
+  def destroy
+    @list = List.find(params[:id])
+    if @list.destroy
+    else
+      flash[:notice] = ">_<"
+    end
+
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+
+  end
+
 
   private
   def list_params

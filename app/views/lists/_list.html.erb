@@ -1,23 +1,29 @@
-<div class="panel panel-default">
-  <a data-toggle="collapse" data-parent="#accordion" href="#<%= list.id %>" class="">
-  <div class="panel-heading list-card o__hoverable" >
-    <h4 class="panel-title">
-        <%= list.name %>
-    </h4>
-  </div>
-  </a>
+<div id="list-<%= list.id %>" class="panel panel-default">
+  <div data-toggle="collapse" data-parent="#accordion" href="#<%= "list-#{list.id}-body" %>" class="">
 
-  <div id="<%= list.id %>" class="panel-collapse collapse">
+    <!-- LIST-CARD -->
+    <div class="list-card o__hoverable" >
+      <h4>
+        <%= list.name %>
+        <div class="float-right">
+          <div id="<%= "list-#{list.id}-todo-count"%>" class="todo-count">
+            <%= list.todos.count %>
+          </div>
+          <div class="float-right">
+            <%= link_to "", [current_user, list], method: :delete, class: 'glyphicon glyphicon-remove', remote: true %>
+          </div>
+        </div>
+      </h4>
+    </div>
+  </div>
+
+  <!-- LIST-CARD-BODY -->
+  <div id="<%= "list-#{list.id}-body" %>" class="panel-collapse collapse">
+    <!-- LIST-CARD-BODY-TODOS -->
     <div class="panel-body">
       <%= render 'todos/form', todo: Todo.new, list: list %>
       <div id="<%= "list-#{list.id}-todos" %>">
-        <% if list.todos.any? %>
-              <%= render list.todos %>
-        <% else %>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        <% end %>
+        <%= render list.todos %>
       </div>
     </div>
   </div>

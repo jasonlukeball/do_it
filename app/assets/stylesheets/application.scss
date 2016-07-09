@@ -82,6 +82,19 @@ h1 {
   @extend .card;
   display:        block;
   padding: 20px 20px 20px 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+
+  .todo-count {
+    border: 1px solid #c9d7df;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 0 5px;
+  }
+
+
 }
 
 .card,
@@ -99,4 +112,9 @@ h1 {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0), 0 2px 20px 0 rgba(0, 0, 0, 0.2);
   transform: scale3d(1.015,1.015,1);
   opacity: 1;
+}
+
+
+.float-right {
+  float: right;
 }

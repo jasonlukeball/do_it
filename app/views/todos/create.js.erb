@@ -2,11 +2,19 @@
 <% list_new_todo_div    = "#list-#{@todo.list.id}-new-todo" %>
 <% list_new_todo_input  = "#list-#{@todo.list.id}-new-todo-input" %>
 <% list_todos_div       = "#list-#{@todo.list.id}-todos" %>
+<% list_todos_count     = "#list-#{@todo.list.id}-todo-count" %>
 
 <% if @todo.valid? %>
+    // add todo to top of todos div
     $('<%= list_todos_div %>').prepend("<%= escape_javascript(render partial: 'todos/todo', locals: { todo: @todo }) %>");
+    // update list todos count
+    $('<%= list_todos_count %>').html('<%= @todo.list.todos.count %>');
+    // remove has error warning if exists
     $('<%= list_new_todo_input %>').removeClass('has-error');
+    // render new create todo form
     $('<%= list_new_todo_div %>').html("<%= escape_javascript(render partial: 'todos/form', locals: { list: @todo.list, todo: Todo.new }) %>");
 <% else %>
+    // display error if todo is empty
     $('<%= list_new_todo_input %>').addClass('has-error');
 <% end %>
+
