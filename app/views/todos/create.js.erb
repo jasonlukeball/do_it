@@ -4,7 +4,7 @@
 <% list_todos_div       = "#list-#{@todo.list.id}-todos" %>
 
 <% if @todo.valid? %>
-    $('<%= list_todos_div %>').prepend("<li><%= @todo.name %></li>");
+    $('<%= list_todos_div %>').prepend("<%= escape_javascript(render partial: 'todos/todo', locals: { todo: @todo }) %>");
     $('<%= list_new_todo_input %>').removeClass('has-error');
     $('<%= list_new_todo_div %>').html("<%= escape_javascript(render partial: 'todos/form', locals: { list: @todo.list, todo: Todo.new }) %>");
 <% else %>
