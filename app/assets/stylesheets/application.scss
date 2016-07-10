@@ -115,6 +115,10 @@ h1, h2, h3 {
 }
 
 
+/* ==========================================================================
+   USER NEW LIST CARD
+   ========================================================================== */
+
 
 #new-list-card {
   background-color: #4CAF58;
@@ -154,4 +158,16 @@ h1, h2, h3 {
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+}
+
+
+/* ==========================================================================
+   USER WELCOME MESSAGE
+   ========================================================================== */
+
+#user-message {
+  text-align: center;
+  line-height: 150%;
+  margin-top: 50px;
+  margin-bottom: 50px
 }

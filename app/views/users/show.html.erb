@@ -1,5 +1,5 @@
-<h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px"><%= "#{current_user.name.split.first}, you have #{current_user.todos.count} todos, what are you waiting for?" %></h1>
-
+<!-- USER MESSAGE -->
+<%= user_message(current_user) %>
 
 <!-- CREATE LIST FORM -->
 <div id="new-list-card" class="list-card o__hoverable" >

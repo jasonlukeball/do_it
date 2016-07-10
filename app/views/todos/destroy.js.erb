@@ -1,11 +1,19 @@
-<% list_todo_id    = "#todo-#{@todo.id}" %>
+<% list_todo_id         = "#todo-#{@todo.id}" %>
 <% list_todos_count     = "#list-#{@todo.list.id}-todo-count" %>
+
+<% user_message         = "#user-message" %>
+<% user_first_name      = current_user.name.split.first %>
+<% user_todos_count     = pluralize(current_user.todos.count, 'todo', 'to-dos') %>
 
 <% if @todo.destroyed? %>
     // hide todo
     $('<%= list_todo_id %>').slideUp(150);
     // update list todos count
     $('<%= list_todos_count %>').html('<%= @todo.list.todos.count %>');
+    // update user message
+    $('<%= user_message %>').html('<%= "#{user_first_name}, you have #{user_todos_count}..." %>');
+    $('<%= user_message %>').append('<br>');
+    $('<%= user_message %>').append("Don't let your dreams be dreams.");
 <% else %>
     // show flash error / something went wrong in deletion
     $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] = ">_<"%></div>");

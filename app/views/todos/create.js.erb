@@ -4,6 +4,10 @@
 <% list_todos_div       = "#list-#{@todo.list.id}-todos" %>
 <% list_todos_count     = "#list-#{@todo.list.id}-todo-count" %>
 
+<% user_message         = "#user-message" %>
+<% user_first_name      = current_user.name.split.first %>
+<% user_todos_count     = pluralize(current_user.todos.count, 'todo', 'to-dos') %>
+
 <% if @todo.valid? %>
     // add todo to top of todos div
     $('<%= list_todos_div %>').prepend("<%= escape_javascript(render partial: 'todos/todo', locals: { todo: @todo }) %>");
@@ -13,8 +17,13 @@
     $('<%= list_new_todo_input %>').removeClass('has-error');
     // render new create todo form
     $('<%= list_new_todo_div %>').html("<%= escape_javascript(render partial: 'todos/form', locals: { list: @todo.list, todo: Todo.new }) %>");
+    // update user message
+    $('<%= user_message %>').html('<%= "#{user_first_name}, you have #{user_todos_count}..." %>');
+    $('<%= user_message %>').append('<br>');
+    $('<%= user_message %>').append("Don't let your dreams be dreams.");
 <% else %>
     // display error if todo is empty
     $('<%= list_new_todo_input %>').addClass('has-error');
 <% end %>
+
 
