@@ -5,7 +5,7 @@
 <% list_todos_count     = "#list-#{@todo.list.id}-todo-count" %>
 
 <% user_message         = "#user-message" %>
-<% user_motivation      = random_motivation = ["Just do it.", "Don't let your dreams be dreams.", "Yesterday you said tomorrow.", "Make your dreams come true.", "Wake up and work hard at it.", "Nothing is impossible.", "Yes you can.", "If you're tired of starting over, stop giving up."].sample %>
+<% user_motivation      = ["Just do it.", "Don't let your dreams be dreams.", "Yesterday you said tomorrow.", "Make your dreams come true.", "Wake up and work hard at it.", "Nothing is impossible.", "Yes you can.", "If you're tired of starting over, stop giving up."].sample %>
 <% user_first_name      = current_user.name.split.first %>
 <% user_todos_count     = pluralize(current_user.todos.count, 'todo', 'to-dos') %>
 
