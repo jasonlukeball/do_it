@@ -6,12 +6,10 @@
       <h4 class="noselect">
         <%= list.name %>
         <div class="float-right">
-          <div id="<%= "list-#{list.id}-todo-count"%>" class="todo-count">
+          <span id="<%= "list-#{list.id}-todo-count"%>" class="todo-count">
             <%= list.todos.count %>
-          </div>
-          <div class="float-right">
-            <%= link_to "", [current_user, list], method: :delete, class: 'icon ion-android-close', remote: true %>
-          </div>
+          </span>
+          <%= link_to "", [current_user, list], method: :delete, class: 'icon ion-android-close', remote: true %>
         </div>
       </h4>
     </div>
