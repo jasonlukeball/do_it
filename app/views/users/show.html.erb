@@ -1,14 +1,12 @@
-<h1><%= current_user.name %></h1>
-<%= current_user.inspect %>
+<h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px"><%= "#{current_user.name.split.first}, you have #{current_user.todos.count} todos, what are you waiting for?" %></h1>
 
-<br><br><br><br>
 
 <!-- CREATE LIST FORM -->
-<%= render 'lists/form', user: current_user, list: List.new %>
+<div id="new-list-card" class="list-card o__hoverable" >
+  <%= render 'lists/form', user: current_user, list: List.new %>
+</div>
 
-
-<br><br><br><br>
-
+<!-- USER LISTS -->
 <div class="panel-group" id="user-lists-accordion">
   <%= render current_user.lists %>
 </div>

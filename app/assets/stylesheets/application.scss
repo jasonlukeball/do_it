@@ -57,7 +57,7 @@ body {
 }
 
 
-h1 {
+h1, h2, h3 {
   color: white;
   font-family: 'Open Sans', sans-serif;
 }
@@ -112,6 +112,39 @@ h1 {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0), 0 2px 20px 0 rgba(0, 0, 0, 0.2);
   transform: scale3d(1.015,1.015,1);
   opacity: 1;
+}
+
+
+
+#new-list-card {
+  background-color: #4CAF58;
+  margin-bottom: 40px;
+
+
+  #user-lists-create-form {
+    margin-top: 10px;
+    //margin-bottom: 10px;
+
+    .form-control {
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      background-color: #4CAF58;
+      color: #ffffff;
+    }
+
+    .form-control::-webkit-input-placeholder { color: white; }
+    .form-control:-moz-placeholder { color: white; }
+    .form-control::-moz-placeholder { color: white; }
+    .form-control:-ms-input-placeholder { color: white; }
+
+    i {
+      color: #ffffff;
+      font-size: 21px;
+    }
+  }
+
+
 }
 
 
