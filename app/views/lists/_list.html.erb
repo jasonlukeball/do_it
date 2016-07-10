@@ -1,5 +1,5 @@
 <div id="list-<%= list.id %>" class="panel panel-default">
-  <div data-toggle="collapse" data-parent="#accordion" href="#<%= "list-#{list.id}-body" %>" class="">
+  <div data-toggle="collapse" data-parent="#user-lists-accordion" href="#<%= "list-#{list.id}-body" %>" class="">
 
     <!-- LIST-CARD -->
     <div class="list-card o__hoverable" >
@@ -10,7 +10,7 @@
             <%= list.todos.count %>
           </div>
           <div class="float-right">
-            <%= link_to "", [current_user, list], method: :delete, class: 'glyphicon glyphicon-remove', remote: true %>
+            <%= link_to "", [current_user, list], method: :delete, class: 'icon ion-android-close', remote: true %>
           </div>
         </div>
       </h4>
