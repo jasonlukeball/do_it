@@ -1,4 +1,5 @@
-<%= form_for list, url: user_lists_path(current_user) do |f| %>
+<div id="user-lists-create-form">
+<%= form_for list, url: user_lists_path(current_user), remote: true do |f| %>
     <div class="input-group">
       <%= f.text_field :name, class: 'form-control', placeholder: 'Create a list' %>
       <span class="input-group-btn">
@@ -6,4 +7,4 @@
       </span>
     </div>
 <% end %>
-
+</div>

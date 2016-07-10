@@ -1,0 +1,14 @@
+
+<% user_lists_accordion     = "#user-lists-accordion" %>
+<% user_lists_create_form  = "#user-lists-create-form" %>
+
+<% if @list.valid? %>
+    // add list to top of user-lists-accordion
+    $('<%= user_lists_accordion %>').prepend("<%= escape_javascript(render partial: 'lists/list', locals: { list: @list }) %>");
+    console.log('list created');
+    // render new create list form
+    $('<%= user_lists_create_form %>').html("<%= escape_javascript(render partial: 'lists/form', locals: { list: List.new }) %>");
+<% else %>
+    // flash error
+    $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] = ">_<"%></div>");
+<% end %>
