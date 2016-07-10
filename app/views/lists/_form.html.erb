@@ -1,8 +1,12 @@
 <div id="user-lists-create-form">
   <%= form_for list, url: user_lists_path(current_user), remote: true do |f| %>
-    <div class="form-group has-feedback">
-      <%= f.text_field :name, class: 'form-control', placeholder: 'Create a list' %>
-      <i class="ion-android-add form-control-feedback"></i>
-    </div>
+      <div class="input-group">
+        <%= f.text_field :name, class: 'form-control', placeholder: 'Create a list' %>
+        <span class="input-group-btn">
+          <%= button_tag(type: 'submit', class: 'new-todo-btn') do %>
+              <i class="ion-android-add"></i>
+          <% end %>
+        </span>
+      </div>
   <% end %>
 </div>

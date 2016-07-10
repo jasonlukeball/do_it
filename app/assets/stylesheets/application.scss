@@ -130,6 +130,7 @@ h1, h2, h3 {
 
   #user-lists-create-form {
     margin-top: 10px;
+    margin-bottom: 10px;
 
     .form-control {
       border: 0;
@@ -137,6 +138,7 @@ h1, h2, h3 {
       box-shadow: none;
       background-color: #4CAF58;
       color: #ffffff;
+      font-size: 18px;
     }
 
     .form-control::-webkit-input-placeholder { color: white; }
@@ -148,6 +150,11 @@ h1, h2, h3 {
       color: #ffffff;
       font-size: 21px;
     }
+
+    button {
+      background-color: #4CAF58;
+    }
+
   }
 }
 
