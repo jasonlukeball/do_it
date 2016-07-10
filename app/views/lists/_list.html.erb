@@ -21,7 +21,10 @@
   <div id="<%= "list-#{list.id}-body" %>" class="panel-collapse collapse">
     <!-- LIST-CARD-BODY-TODOS -->
     <div class="panel-body">
-      <%= render 'todos/form', todo: Todo.new, list: list %>
+      <!-- LIST-CARD-BODY-NEW-TODO -->
+      <div class="new-todo">
+        <%= render 'todos/form', todo: Todo.new, list: list %>
+      </div>
       <div id="<%= "list-#{list.id}-todos" %>">
         <%= render list.todos %>
       </div>

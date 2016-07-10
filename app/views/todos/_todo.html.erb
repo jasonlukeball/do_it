@@ -1,4 +1,7 @@
-<li id="todo-<%= todo.id %>">
+<div id="todo-<%= todo.id %>" class="todo">
   <%= todo.name %>
-  <%= link_to "", [todo.list, todo], method: :delete, class: 'glyphicon glyphicon-trash', remote: true %>
-</li>
+  <div class="float-right">
+    <!-- DELETE TO DO -->
+    <%= link_to "", [todo.list, todo], method: :delete, class: 'icon ion-android-close', remote: true %>
+  </div>
+</div>

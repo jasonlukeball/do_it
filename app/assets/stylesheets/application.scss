@@ -154,6 +154,12 @@ h1, h2, h3 {
 
 .float-right {
   float: right;
+
+  a {
+    padding-right: 10px;
+    font-size: 21px;
+    color: #4CAF58;
+  }
 }
 
 .noselect {
@@ -174,4 +180,50 @@ h1, h2, h3 {
   line-height: 150%;
   margin-top: 50px;
   margin-bottom: 50px
+}
+
+
+/* ==========================================================================
+   NEW TO-DO FORM
+   ========================================================================== */
+
+.new-todo {
+
+  border-bottom: 1px solid lightgray;
+
+  .form-control {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+
+  .form-group {
+    margin-bottom: 0px;
+  }
+
+  i {
+    color: #4CAF58;
+    font-size: 21px;
+  }
+}
+
+.new-todo-btn {
+  background-color: white;
+  border: 0;
+}
+
+
+/* ==========================================================================
+   TO DO
+   ========================================================================== */
+
+.todo {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  border-bottom: 1px solid lightgray;
+
 }

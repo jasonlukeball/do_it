@@ -1,10 +1,17 @@
-<div id="<%= "list-#{list.id}-new-todo" %>" class="new-todo">
-    <%= form_for [list, todo], url: list_todos_path([list, todo]), remote: true do |f| %>
-        <div class="input-group" id="<%= "list-#{list.id}-new-todo-input" %>">
-          <%= f.text_field :name, class: 'form-control', placeholder: 'Create a todo' %>
-          <span class="input-group-btn">
-            <%= f.submit "Create", class: 'btn btn-success' %>
-          </span>
+<div id="<%= "list-#{list.id}-new-todo" %>">
+    <%= form_for [list, todo], id: "101", url: list_todos_path([list, todo]), remote: true do |f| %>
+        <div class="form-group" id="<%= "list-#{list.id}-new-todo-input" %>">
+          <div class="input-group">
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Add a to-do' %>
+            <span class="input-group-btn">
+              <%= button_tag(type: 'submit', class: 'new-todo-btn') do %>
+                  <i class="ion-android-add"></i>
+              <% end %>
+            </span>
+          </div>
         </div>
     <% end %>
 </div>
+
+
+
