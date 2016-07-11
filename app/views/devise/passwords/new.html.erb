@@ -1,16 +1,22 @@
-<h2>Forgot your password?</h2>
+<div class="row">
+  <div class="col-xs-7 sign-up-log-in">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <h2>Forgot your password?</h2>
+    <br>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+        <%= form_group_tag(devise_error_messages![:email]) do %>
+            <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Email" %>
+            <small class="error-message"><%= devise_error_messages![:email].first %></small>
+        <% end %>
+
+        <div class="actions">
+            <%= f.submit "Send password reset instructions" %>
+        </div>
+
+        <br>
+        <%= link_to "Didn't receive password reset instructions?", new_user_confirmation_path %>
+
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
