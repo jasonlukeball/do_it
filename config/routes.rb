@@ -13,4 +13,8 @@ Rails.application.routes.draw do
     resources :todos, only: [:create, :destroy]
   end
 
+  as :user do
+    get 'users', :to => 'users#show', :as => :user_root
+  end
+
 end
