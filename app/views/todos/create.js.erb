@@ -19,9 +19,8 @@
     // render new create todo form
     $('<%= list_new_todo_div %>').html("<%= escape_javascript(render partial: 'todos/form', locals: { list: @todo.list, todo: Todo.new }) %>");
     // update user message
-    $('<%= user_message %>').html('<%= "#{user_first_name}, you have #{user_todos_count}..." %>');
-    $('<%= user_message %>').append('<br>');
-    $('<%= user_message %>').append('<%= user_motivation %>');
+    $('<%= user_message %>').html('<h2><%= "#{user_first_name}, you have #{user_todos_count}..." %></h2>');
+    $('<%= user_message %>').append('<h3><%= user_motivation %></h3>');
 <% else %>
     // display error if todo is empty
     $('<%= list_new_todo_input %>').addClass('has-error');

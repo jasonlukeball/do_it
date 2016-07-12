@@ -9,9 +9,8 @@
     // hide list
     $('<%= list_id %>').fadeOut(300);
     // update user message
-    $('<%= user_message %>').html('<%= "#{user_first_name}, you have #{user_todos_count}..." %>');
-    $('<%= user_message %>').append('<br>');
-    $('<%= user_message %>').append('<%= user_motivation %>');
+    $('<%= user_message %>').html('<h2><%= "#{user_first_name}, you have #{user_todos_count}..." %></h2>');
+    $('<%= user_message %>').append('<h3><%= user_motivation %></h3>');
 <% else %>
     // show flash error / something went wrong in deletion
     $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] = ">_<"%></div>");
