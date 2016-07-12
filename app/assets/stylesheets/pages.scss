@@ -2,7 +2,7 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#videobg {
+#videobg, #imagebg {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -16,4 +16,22 @@
   background-position: center center;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transition: 1s opacity;
+}
+
+#image-div {
+  display:none;
+}
+
+
+@media (max-width: 667px) {   // any device less than 667px wide
+
+  // show image background
+  #image-div, #imagebg {
+    display: block !important;
+  }
+
+  // hide video background
+  #video-div, #videobg {
+    display: none !important;
+  }
 }
