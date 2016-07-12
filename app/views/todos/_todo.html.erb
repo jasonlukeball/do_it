@@ -2,11 +2,7 @@
   <%= todo.name %>
 
   <div class="float-right">
-
-
-      <span class="todo-created-time"> <%= distance_of_time_in_words(todo.created_at, Time.now) %> ago</span>
-
-
+      <span class="todo-created-time"> <%= distance_of_time_in_words(todo.created_at, Time.now, scope: 'datetime.distance_in_words') %></span>
     <!-- DELETE TO DO -->
     <%= link_to "", [todo.list, todo], method: :delete, class: 'icon ion-android-close', remote: true %>
   </div>
