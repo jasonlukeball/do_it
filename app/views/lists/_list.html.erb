@@ -1,6 +1,5 @@
 <div id="list-<%= list.id %>" class="panel panel-default">
   <div data-toggle="collapse" data-parent="#user-lists-accordion" href="#<%= "list-#{list.id}-body" %>" class="">
-
     <!-- LIST-CARD -->
     <div class="list-card o__hoverable" >
       <h4 class="noselect">
@@ -9,6 +8,7 @@
           <span id="<%= "list-#{list.id}-todo-count"%>" class="todo-count">
             <%= list.todos.count %>
           </span>
+          <%= link_to "", edit_user_list_path(current_user, list.id), class: 'ion-compose', remote: true %>
           <%= link_to "", [current_user, list], method: :delete, class: 'icon ion-android-close', remote: true %>
         </div>
       </h4>

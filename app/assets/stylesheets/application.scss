@@ -216,7 +216,7 @@ h1, h2, h3 {
 
 
 /* ==========================================================================
-   USER NEW LIST CARD
+   NEW LIST
    ========================================================================== */
 
 
@@ -251,6 +251,38 @@ h1, h2, h3 {
       background-color: #4CAF58;
     }
 
+  }
+}
+
+
+/* ==========================================================================
+   EDIT LIST
+   ========================================================================== */
+
+.edit-list-form {
+  margin-top: 1px;
+  margin-bottom: 1px;
+
+  border-bottom: 1px solid lightgray;
+
+  .form-control {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    margin: 0;
+  }
+
+  i {
+    color: #4CAF58;
+    font-size: 21px;
+  }
+
+  button {
+    background-color: white;
+    border: 0;
+    outline: none;
   }
 }
 

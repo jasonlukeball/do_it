@@ -1,0 +1,14 @@
+<div class="list-card o__hoverable">
+    <div class="edit-list-form">
+        <%= form_for list, url: user_list_path(current_user, list), remote: true do |f| %>
+            <div class="input-group">
+              <%= f.text_field :name, class: 'form-control', placeholder: 'Create a list' %>
+              <span class="input-group-btn">
+                  <%= button_tag(type: 'submit', class: 'noselect') do %>
+                      <i class="ion-checkmark-circled"></i>
+                  <% end %>
+                </span>
+            </div>
+        <% end %>
+    </div>
+</div>

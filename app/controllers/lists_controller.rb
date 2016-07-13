@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
 
+
   def create
     @list = current_user.lists.new(list_params)
 
@@ -12,7 +13,31 @@ class ListsController < ApplicationController
       format.html { redirect_to :back }
       format.js
     end
+  end
 
+
+  def edit
+    @list = List.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+  end
+
+
+  def update
+    @list = List.find(params[:id])
+    @list.assign_attributes(list_params)
+
+    if @list.save
+    else
+      flash[:alert] = ">_<"
+    end
+
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
   end
 
 
