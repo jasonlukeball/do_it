@@ -367,3 +367,43 @@ h1, h2, h3 {
   padding-right: 10px;
   color: #2E953B;
 }
+
+
+/* ==========================================================================
+   EDIT TO DO
+   ========================================================================== */
+
+
+.edit-todo {
+  border-bottom: 1px solid lightgray;
+
+  .form-control {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+
+  }
+
+  .form-group {
+    padding-left: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    input {
+      padding: 0;
+    }
+
+    i {
+      color: #4CAF58;
+      font-size: 21px;
+    }
+
+    button {
+      background-color: white;
+      border: 0;
+      outline: none;
+      padding: 0;
+    }
+  }
+}

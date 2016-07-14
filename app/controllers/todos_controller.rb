@@ -18,6 +18,31 @@ class TodosController < ApplicationController
   end
 
 
+  def edit
+    @todo = Todo.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+  end
+
+
+  def update
+    @todo = Todo.find(params[:id])
+    @todo.assign_attributes(todo_params)
+
+    if @todo.save
+    else
+      flash[:alert] = ">_<"
+    end
+
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+  end
+
+
   def destroy
     @todo = Todo.find(params[:id])
 
