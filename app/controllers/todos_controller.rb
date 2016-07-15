@@ -7,6 +7,13 @@ class TodosController < ApplicationController
     @todo.user = current_user
 
     if @todo.save
+      @intercom_event = {
+        :name => 'created-todo',
+        :metadata => {
+          :id => @todo.id,
+          :name => @todo.name
+        }
+      }
     else
       flash.now[:alert] = ">_<"
     end
@@ -20,6 +27,13 @@ class TodosController < ApplicationController
 
   def edit
     @todo = Todo.find(params[:id])
+    @intercom_event = {
+      :name => 'edited-todo',
+      :metadata => {
+        :id => @todo.id,
+        :name => @todo.name
+      }
+    }
     respond_to do |format|
       format.html { redirect_to :back }
       format.js
@@ -32,6 +46,13 @@ class TodosController < ApplicationController
     @todo.assign_attributes(todo_params)
 
     if @todo.save
+      @intercom_event = {
+        :name => 'updated-todo',
+        :metadata => {
+          :id => @todo.id,
+          :name => @todo.name
+        }
+      }
     else
       flash[:alert] = ">_<"
     end
@@ -47,6 +68,13 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
 
     if @todo.destroy
+      @intercom_event = {
+        :name => 'deleted-todo',
+        :metadata => {
+          :id => @todo.id,
+          :name => @todo.name
+        }
+      }
     else
       flash.now[:alert] = ">_<"
     end

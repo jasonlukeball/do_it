@@ -9,7 +9,7 @@
     // render new create list form
     $('<%= user_lists_create_form %>').html("<%= escape_javascript(render partial: 'lists/form', locals: { list: List.new }) %>");
     // post event to intercom
-    Intercom('trackEvent', 'created-list');
+    Intercom('trackEvent', '<%= @intercom_event[:name] %>', <%= @intercom_event[:metadata].to_json.to_s.html_safe %>);
 <% else %>
     // flash error
     $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] = ">_<"%></div>");

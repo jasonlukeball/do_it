@@ -1,3 +1,3 @@
 $('<%= "#list-#{@list.id}" %>').html("<%= escape_javascript(render partial: 'lists/edit', locals: { list: @list }) %>");
 // post event to intercom
-Intercom('trackEvent', 'edited-list');
+Intercom('trackEvent', '<%= @intercom_event[:name] %>', <%= @intercom_event[:metadata].to_json.to_s.html_safe %>);
