@@ -21,6 +21,8 @@
     // update user message
     $('<%= user_message %>').html('<h2><%= "#{user_first_name}, you have #{user_todos_count}..." %></h2>');
     $('<%= user_message %>').append('<h3><%= user_motivation %></h3>');
+    // post event to intercom
+    Intercom('trackEvent', 'created-todo');
 <% else %>
     // display error if todo is empty
     $('<%= list_new_todo_input %>').addClass('has-error');

@@ -1,1 +1,3 @@
 $('<%= "#todo-#{@todo.id}" %>').replaceWith("<%= escape_javascript(render partial: 'todos/edit', locals: { list: @todo.list, todo: @todo }) %>");
+// post event to intercom
+Intercom('trackEvent', 'edited-todo');
