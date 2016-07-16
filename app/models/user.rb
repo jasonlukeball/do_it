@@ -9,4 +9,14 @@ class User < ActiveRecord::Base
   has_many :lists
   has_many :todos
 
+  after_create :setup
+
+  private
+  def setup
+    list1 = self.lists.create!(name: "My First List")
+    self.lists.first.todos.create!(user: self, name: "Create a new list")
+    self.lists.first.todos.create!(user: self, name: "Do them")
+    self.lists.first.todos.create!(user: self, name: "Create more to-dos")
+  end
+
 end
