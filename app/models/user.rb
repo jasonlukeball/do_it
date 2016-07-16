@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   private
   def setup
-    list1 = self.lists.create!(name: "My First List")
+    self.lists.create!(name: "My First List")
     self.lists.first.todos.create!(user: self, name: "Create a new list")
     self.lists.first.todos.create!(user: self, name: "Do them")
     self.lists.first.todos.create!(user: self, name: "Create more to-dos")
