@@ -17,4 +17,11 @@ Rails.application.routes.draw do
     get 'users', :to => 'users#show', :as => :user_root
   end
 
+  # api
+  namespace :api do
+    namespace :v1 do
+      get '/ping', :controller => :base, :action => :ping
+    end
+  end
+
 end
