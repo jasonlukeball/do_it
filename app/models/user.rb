@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :todos
 
   after_create :setup
+  before_save { self.role ||= :user }
+
+  enum role: [:user, :admin]
 
   private
   def setup
