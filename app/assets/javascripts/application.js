@@ -16,3 +16,13 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$("#videobg").onclick = toggleVideoMute();
+
+function toggleVideoMute() {
+  if( $("#videobg").prop('muted') ) {
+    $("#videobg").prop('muted', false);
+  } else {
+    $("#videobg").prop('muted', true);
+  }
+}
