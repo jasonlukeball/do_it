@@ -3,9 +3,9 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
-require 'spec_helper'
 require 'rspec/rails'
-require 'factory_girl_rails'
+require 'spec_helper'
+require 'factory_bot'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -54,5 +54,13 @@ RSpec.configure do |config|
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # FactoryGirl config
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
+
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
+
 end

@@ -17,7 +17,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.before(:each) do |example|
     Rails.logger.info "\n\n\n#{example.metadata[:example_group][:full_description]} it #{example.description}\n"
   end

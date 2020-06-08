@@ -11,9 +11,11 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:account_update) << :name
+    # Permit the `subscribe_newsletter` parameter along with the other
+    # sign up parameters.
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
 end
