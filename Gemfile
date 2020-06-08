@@ -5,7 +5,7 @@ gem 'rails', '>= 5.0.0.rc2', '< 5.1'
 ruby '2.5.0'
 
 group :production do
-  #gem 'pg'                            # Postgres database on heroku
+  gem 'pg'                            # Postgres database on heroku
   gem 'rails_12factor'                # Required for assets pipeline on heroku
   gem 'faker', '~> 1.6', '>= 1.6.3'
 end
